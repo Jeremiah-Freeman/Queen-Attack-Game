@@ -2,12 +2,22 @@
     class Queen
     {
         function canAttack($queen, $pawn) {
-            if($queen[0]==$pawn[0]){
-                return "Yes";
-            } else if($queen[1]==$pawn[1]){
-                return "Yes";
+            if($queen[0] > 7 || $queen[1] > 7 || $pawn[0] > 7 || $pawn[1] > 7){
+                return "Your coordinates do not exist on a chess board";
             }else{
-                return "No";
+                if($queen[1]==$pawn[1] && $queen[0]==$pawn[0]){
+                    return "Same Spot";
+                }else{
+                    if($queen[0]==$pawn[0]){
+                        return "Yes";
+                    } else if($queen[1]==$pawn[1]){
+                        return "Yes";
+                    }else if(1==(($pawn[1]-$queen[1])/($pawn[0]-$queen[0]))){
+                        return "Yes";
+                    }else{
+                        return "No";
+                    }
+                }
             }
         }
     }

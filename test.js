@@ -11,7 +11,7 @@ function canAttack(first, second){
         }else{
             console.log("diag false");
         }
-        
+
         if(first[0]==second[0]){
             console.log("hor true");
         }else{
@@ -23,5 +23,49 @@ function canAttack(first, second){
         }else{
             console.log("ver false");
         }
+    }
+}
+
+
+// hour hand
+function hourClock(hr, min){
+    return .5 * (60*hr + min);
+}
+
+//min hanf
+function minClock(min){
+    return 6 * min;
+}
+
+
+//deg calc
+function checkAngle(hr, min){
+    var hourDeg = .5 * (60*hr + min);
+    // console.log(hourDeg);
+    var minDeg = 6 * min;
+    // console.log(minDeg);
+    var deg;
+
+    if(hourDeg>minDeg){
+        deg = hourDeg-minDeg;
+    }else{
+        deg = minDeg-hourDeg;
+    }
+
+    if(deg>180){
+        return 360-deg;
+    }else{
+        return deg;
+    }
+}
+
+//or
+
+function checkAngle2(hr, min){
+    var deg = .5*(60 * hr - 11 * min);
+    if(deg>180){
+        return Math.abs(360-deg);
+    }else{
+        return Math.abs(deg);
     }
 }

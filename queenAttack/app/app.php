@@ -17,7 +17,7 @@
 
     $app->post("/new", function() use ($app) {
     $newLeet = new Queen();
-    $result = $newLeet->canAttack(array($_POST["userQueenX"],($_POST["userQueenY"]), array($_POST["userPawnX"],($_POST["userPawnY"]));
+    $result = $newLeet->canAttack(array($_POST["userQueenX"],$_POST["userQueenY"]), array($_POST["userPawnX"],($_POST["userPawnY"])));
     return $app['twig']->render('attack.html.twig' , array("result" => $result));
     });
 
